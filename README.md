@@ -1,4 +1,4 @@
-# ReactJS - Template Modelo
+# ReactJS - Template Jediael
 
 
 Principais libs inclusas:
@@ -82,3 +82,19 @@ A partir de agora, para commitar pode ser usado a seguinte sintaxe:
 `git cz` (Ao invés de git commit -m "...")
 
 Basta seguir as instruções do CLI.
+
+## Features
+
+Novas features para o template:
+
+- [ ] Criar nova lib de validacao
+- [ ] Setar ambiente Docker
+- [ ] Jest instalado
+- [x] Regras de revisao Lint
+- [x] Regras de revisao Prettier
+- [x] Regras de revisao ReactJS
+- [ ] Regras de revisao de PRs
+- [x] Regras de revisao de Commits
+- [x] Instalar Commitzen
+- [ ] Atualizar dependencias
+- [ ] Refatorar alguns pontos do codigo antigo
