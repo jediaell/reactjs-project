@@ -1,7 +1,7 @@
 # ReactJS - Template Jediael
 
 
-Principais libs inclusas:
+Main libs:
 - React + Mobx
 - Material UI
 - Styled Components
@@ -10,34 +10,34 @@ Principais libs inclusas:
 - Lottie
 - React Toastify
 - Solidarity
-- Commitzen e Commitlint
+- Commitzen and Commitlint
 - Reactotron
 
-## Instalar dependências
-Para instalar basta rodar na root do projeto:
+## Install dependencies
+Run on root project:
 
 `yarn` ou `npm install`
 
 
 ## Edit: Bug em lib [Validations](https://www.npmjs.com/package/@platformbuilders/validations) 
 
-A Lib `@platformbuilders/validations` tem um bug gerado durante a instalaçao. Para resolver e compilar o projeto, basta seguir os passos abaixo:
+In a Lib `@platformbuilders/validations` There is a bug generated during the installation. To solve and compile the project, just follow the steps below:
 
-1 - Vá no diretório `./node_modules/@platformbuilders/validations/dist/index.es.js` , busque as linhas 1 e 3 do arquivo e substitua os import @fnando/cpf e @fnando/cnpj por @platformbuilders/validations.
+1 - Go to directory `./node_modules/@platformbuilders/validations/dist/index.es.js` , fetch lines 1 and 3 of the file and replace the import  @fnando/cpf and @fnando/cnpj to @platformbuilders/validations.
 
 
 ## Start
 
-Para iniciar:
+To start the project:
 
-`yarn start` ou `npm run start`
+`yarn start` or `npm run start`
 
 
-## Arquitetura
+##Architecture
 
 ## Dependências Core
 
-São as principais dependências do projeto, que precisam ser compreendidas pelo menos mínimamente para entender como esta arquitetura funciona.
+These are the main dependencies of the project, which need to be understood at least minimally to understand how this architecture works.
 
 - [React](https://reactjs.org/)
 - [Mobx](https://mobx.js.org/)
@@ -46,55 +46,55 @@ São as principais dependências do projeto, que precisam ser compreendidas pelo
 
 ### Stores
 
-As `stores` são responsáveis por armazenar o state da aplicação. Qualquer tipo de informação que possa ser utilizada em mais de um container ou component, deve ser armazenada em uma store.  Elas também são responsáveis por fazer requests externas através de `services`, que lidam com requisições externas e erro handling. Nenhuma store deve tratar erros; isso é responsabilidade do service e do container que iniciou a requisição
+The `stores` are responsible for storing the application state. Any type of information that can be used in more than one container or component must be stored in a store. They are also responsible for making external requests through `services`, which handle external requests and error handling. No store should handle errors; this is the responsibility of the service and the container that started the request.
 
-Está sendo utilizando o [Mobx](https://mobx.js.org/) para lidar com as stores. Basta usar os decorators  `inject` e `observer`  onde deseja injetar uma store e observar suas alterações (geralmente em `containers`).
+[Mobx](https://mobx.js.org/) is being used to deal with stores. Just use the `inject` and `observer` decorators where you want to inject a store and watch your changes (usually in `containers`).
 
 ### Scenes
 
-São as telas que possuem rotas próprias. São sempre divididas entre `container`  e  `component`. O container (index.js) faz a conexão com as `stores`, e são responsáveis por toda a lógica da Scene e de passar as informações da store para a interface. Já o `component` (nome da Scene) é responsável pela interface visual.
+These are the screens that have their own routes. They are always split between `container` and `component`. The container (index.js) makes the connection with the `stores`, and is responsible for all the Scene logic and for passing the information from the store to the interface. The `component` (Scene name) is responsible for the visual interface.
 
 ## Components
 
-Todos os components visuais são declarados neste folder. Botões, checkbox, inputs. Também são declarados components responsáveis por “behaviour”, mesmo  sem ter uma interface, como o caso do `FormContainer`, que encapsula comportamentos de formulário vindos Formik a todos os `childrens` que forem passados como props.
+All visual components are declared in this folder. Buttons, checkbox, inputs. Components responsible for “behaviour” are also declared, even without having an interface, as in the case of `FormContainer`, which encapsulates form behaviors coming from Formik to all `children` that are passed as props.
 
 ## Utils/Modules
-Para facilitar uma possível migração de dependências, todas as dependências são declaradas no arquivo de modules e depois importadas apontando para este arquivo.
+To facilitate a possible dependency migration, all dependencies are declared in the modules file and then imported pointing to this file.
 
 ### Commits
 
-Os commits devem seguir o seguinte padrão:
+Commit patterns:
 `<type>(scope): <description>`
 
-Sendo que os types podem ser os seguintes:
-`feat: Uma nova feature`
-`fix: Correção de um bug`
-`chore: Uma alteração que não é nem uma nova feature, nem uma correção`
+The types can be as follows:
+`feat: new feature`
+`fix: bug`
+`chore: A change that is neither a new feature nor a bug.`
 
-Para auxiliar no processo de commit, é recomendado utilizar o seguinte pacote:
+To help with the commit process, it is recommended to use the following package:
 `yarn global add commitizen`
 
-Em seguida, deve ser iniciado uma única vez:
+Then it must be started once:
 `commitizen init cz-conventional-changelog --save-dev --save-exact --yarn`
 
-A partir de agora, para commitar pode ser usado a seguinte sintaxe:
+From now on, to commit the following syntax can be used:
 `git add .`
-`git cz` (Ao invés de git commit -m "...")
+`git cz` (Rather than git commit -m "...")
 
-Basta seguir as instruções do CLI.
+Just follow the CLI instructions.
 
 ## Features
 
-Novas features para o template:
+New features to implement:
 
-- [ ] Criar nova lib de validacao
-- [ ] Setar ambiente Docker
-- [ ] Jest instalado
-- [x] Regras de revisao Lint
-- [x] Regras de revisao Prettier
-- [x] Regras de revisao ReactJS
-- [ ] Regras de revisao de PRs
-- [x] Regras de revisao de Commits
-- [x] Instalar Commitzen
-- [ ] Atualizar dependencias
-- [ ] Refatorar alguns pontos do codigo antigo
+- [ ] Create a new validation lib
+- [ ] Docker
+- [ ] Jes
+- [x] Lint
+- [x] Prettier
+- [x] ReactJS review rules
+- [ ] PRs review rules
+- [x] Commits review rules
+- [x] Commitzen
+- [ ] Update dependencies
+- [ ] Refactoring some old points. 
